@@ -1,0 +1,19 @@
+<!--<ul>
+  <li class="text" *ngFor="let chat of chats | async">
+    {{chat.mensaje}}
+  </li>
+</ul>-->
+<div class="container main-containers">
+  <h1 style="margin-top:3%" class="text-center">Chat</h1>
+  <div *ngIf="chatS.usuario.uid">
+    <button (click)="chatS.logout()" type="button" class="btn btn-outline-danger">
+      Salir
+    </button>
+  </div>
+  <br>
+  <app-login *ngIf="!chatS.usuario.uid"> </app-login>
+
+  <div class="chat-window" *ngIf="chatS.usuario.uid">
+    <app-chat></app-chat>
+  </div>
+</div>
